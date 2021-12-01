@@ -8,42 +8,52 @@
     <h1>Coding Form!</h1>
 
     <form>
-      <label
-        >Email
+      <div>
+        <label for="email">Email</label>
         <br />
-        <input type="email" name="email" />
-      </label>
-      <br />
-      <label for="cool-codes">Why is coding cool? </label>
-      <br />
-      <select name="cool-codes" id="cool-codes">
-        <option value="">Select an option</option>
-        <option value="Because it's interesting">
-          Because it's interesting
-        </option>
-        <option value="Because it's fun">Because it's fun</option>
-        <option value="Because it's powerful">Because it's powerful</option>
-      </select>
-      <br />
-      <label>Favorite Language (choose one)</label>
-      <br />
-      <label> <input type="radio" name="codeTypes" value="html" /> HTML </label>
-      <label> <input type="radio" name="codeTypes" value="CSS" /> CSS </label>
-      <label>
-        <input type="radio" name="codeTypes" value="JAVASCRIPT" /> JAVASCRIPT
-      </label>
-      <br />
-      <label>
+        <input id="email" type="email" name="email" />
+      </div>
+
+      <div>
+        <label for="cool-codes">Why is coding cool? </label>
+        <br />
+        <select name="cool-codes" id="cool-codes">
+          <option value="">Select an option</option>
+          <option value="Because it's interesting">
+            Because it's interesting
+          </option>
+          <option value="Because it's fun">Because it's fun</option>
+          <option value="Because it's powerful">Because it's powerful</option>
+        </select>
+      </div>
+
+      <div>
+        Favorite Language (choose one)
+        <br />
+        <label>
+          <input type="radio" name="codeTypes" value="html" /> HTML
+        </label>
+        <label> <input type="radio" name="codeTypes" value="CSS" /> CSS </label>
+        <label>
+          <input type="radio" name="codeTypes" value="JAVASCRIPT" /> JAVASCRIPT
+        </label>
+      </div>
+
+      <div>
         Would you like to sign up for more information?
         <br />
-        <input type="checkbox" name="subscribe" value="Sign me up!" /> Sign me
-        up!
-      </label>
-      <br />
-      <label>Comments</label>
-      <div>
-        <textarea name="comments" cols="20" rows="10"></textarea>
+        <label>
+          <input type="checkbox" name="subscribe" value="Sign me up!" /> Sign me
+          up!
+        </label>
       </div>
+
+      <div>
+        <label for="comments">Comments </label>
+        <br />
+        <textarea id="comments" name="comments" cols="20" rows="10"></textarea>
+      </div>
+
       <input type="submit" name="submit" value="Submit" />
     </form>
   </body>
