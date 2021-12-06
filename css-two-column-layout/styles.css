@@ -47,7 +47,7 @@ p {
   width: 100%;
 }
 
-.column-two {
+.column-half {
   width: calc(100% / 2);
 }
 
