@@ -4,28 +4,37 @@ var orderHistory = [
     total: '$34.00',
     ship: 'JS Masher',
     orderNumber: '114 - 3941689 - 8772232',
-    type: 'book',
-    title: 'Javascript for impatient programmers',
-    delivered: 'Aug 8, 2020',
+    deliveredDate: 'Aug 8, 2020',
     reviewed: false,
     buyAgain: false,
     returnWindowClosed: true,
     returnWindowDate: 'Sept 7, 2020',
-    itemPrice: '$31.55'
+    item: [
+      {
+        type: 'book',
+        title: 'Javascript for impatient programmers',
+        author: 'Rauschmayer, Dr. Axel',
+        itemPrice: '$31.55'
+      }
+    ]
   },
   {
     ordered: 'July 19, 2020',
     total: '$44.53',
     ship: 'JS Masher',
     orderNumber: '113-9984268-1280257',
-    type: 'book',
-    title: 'The Timeless Way of Building',
-    delivered: 'Jul 20, 2020',
+    deliveredDate: 'Jul 20, 2020',
     reviewed: false,
     buyAgain: false,
     returnWindowClosed: true,
     returnWindowDate: 'Aug 19, 2020',
-    itemPrice: '$41.33'
+    item: [
+      {
+        type: 'book',
+        title: 'The Timeless Way of Building',
+        itemPrice: '$41.33'
+      }
+    ]
   },
 
   {
@@ -33,15 +42,18 @@ var orderHistory = [
     total: '$17.22',
     ship: 'JS Masher',
     orderNumber: '114-2875557-9059409',
-    type: 'console',
-    title: 'Gamecube Controller Adapter. Super Smash Bros Switch Gamecube  Adapter for WII UIEvent PC. Support Turbo and Vibration Feaures. No Driver and No Lag Gamecube Adapter',
-    delivered: 'Jul 07, 2020',
+    deliveredDate: 'Jul 07, 2020',
     reviewed: false,
     buyAgain: false,
     returnWindowClosed: true,
     returnWindowDate: 'Aug 05, 2020',
-    itemPrice: '$15.98'
-
+    item: [
+      {
+        type: 'console',
+        title: 'Gamecube Controller Adapter. Super Smash Bros Switch Gamecube  Adapter for WII UIEvent PC. Support Turbo and Vibration Feaures. No Driver and No Lag Gamecube Adapter',
+        itemPrice: '$15.98'
+      }
+    ]
   },
 
   {
@@ -50,7 +62,7 @@ var orderHistory = [
     total: '$138.93',
     ship: 'JS Masher',
     orderNumber: '113-2883177-2648248',
-    delivered: 'Jul 05,2020',
+    deliveredDate: 'Jul 05,2020',
     reviewed: false,
     buyAgain: false,
     returnedWindowClosed: true,
@@ -64,6 +76,7 @@ var orderHistory = [
       {
         type: 'book',
         title: 'The Art of Sql',
+        author: 'Faroult, Stephane',
         itemPrice: '$33.99'
       }
     ]
