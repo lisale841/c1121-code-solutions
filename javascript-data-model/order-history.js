@@ -9,7 +9,7 @@ var orderHistory = [
     buyAgain: false,
     returnWindowClosed: true,
     returnWindowDate: 'Sept 7, 2020',
-    item: [
+    items: [
       {
         type: 'book',
         title: 'Javascript for impatient programmers',
@@ -28,7 +28,7 @@ var orderHistory = [
     buyAgain: false,
     returnWindowClosed: true,
     returnWindowDate: 'Aug 19, 2020',
-    item: [
+    items: [
       {
         type: 'book',
         title: 'The Timeless Way of Building',
@@ -47,7 +47,7 @@ var orderHistory = [
     buyAgain: false,
     returnWindowClosed: true,
     returnWindowDate: 'Aug 05, 2020',
-    item: [
+    items: [
       {
         type: 'console',
         title: 'Gamecube Controller Adapter. Super Smash Bros Switch Gamecube  Adapter for WII UIEvent PC. Support Turbo and Vibration Feaures. No Driver and No Lag Gamecube Adapter',
