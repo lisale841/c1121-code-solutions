@@ -16,7 +16,7 @@ function isEven(number) {
 }
 
 function startsWithJ(string) {
-  if (string === 'J') {
+  if (string[0] === 'J') {
     return true;
   } else {
     return false;
@@ -36,6 +36,12 @@ function isOldEnoughToDrive(person) {
     return true;
   } else {
     return false;
+  }
+}
+
+function isOldEnoughToDrinkAndDrive(person) {
+  if (person.age >= 21) {
+    return true;
   }
 }
 
