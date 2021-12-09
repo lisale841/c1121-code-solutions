@@ -1,5 +1,5 @@
 /* exported getSumOfSquares */
 function getSumOfSquares(x, y) {
-  var sumOfSquares = (x + y, 2);
+  var sumOfSquares = (x * x) + (y * y);
   return sumOfSquares;
 }
