@@ -1,0 +1,37 @@
+body {
+  font-family: 'Barlow', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.container {
+  width: 900px;
+  margin: auto;
+}
+
+.row {
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+}
+
+.full-column {
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+}
+
+.column-one-fifth {
+  width: calc(100% / 5);
+}
+
+.product-image {
+  width: 90%;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+}
