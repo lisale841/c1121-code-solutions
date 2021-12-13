@@ -9,33 +9,27 @@
 function getNumbersToTen() {
   var numbers = [];
   var currentNumber = 1;
-
-  for (var i = 0; i < 10; i++) {
+  while (currentNumber <= 10) {
     numbers.push(currentNumber);
-    currentNumber = currentNumber + 1;
+    currentNumber++;
   }
-
   return numbers;
 }
-
 function getEvenNumbersToTwenty() {
   var evenNumbers = [];
   var currentNumber = 2;
-
-  for (var i = 2; i <= 20; i++) {
+  while (currentNumber <= 20) {
     evenNumbers.push(currentNumber);
-    currentNumber = currentNumber + 2;
+    currentNumber += 2;
   }
   return evenNumbers;
 }
-
-function repeatWord(word, time) {
+function repeatWord(word, times) {
   var count = 1;
   var repeated = '';
-
-  for (var i = count; i < time; i++) {
-    repeated = repeated + word;
-    count = count + 1;
+  while (count < times) {
+    repeated += word;
+    count++;
   }
   return repeated;
 }
