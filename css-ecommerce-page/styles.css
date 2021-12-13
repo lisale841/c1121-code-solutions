@@ -4,6 +4,10 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 
+h1 {
+  font-size: 20px;
+}
+
 .container {
   width: 900px;
   margin: auto;
@@ -34,4 +38,33 @@ body {
 
 img {
   width: 100%;
+}
+
+.product-name {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.product-size {
+  color: #dfdfdf;
+}
+
+.product-price {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.new-price {
+  background-color: #fef2e7;
+}
+
+.old-price {
+  color: #dfdfdf;
+  text-decoration: line-through;
+}
+
+.lv-image {
+  margin-bottom: 25px;
 }
