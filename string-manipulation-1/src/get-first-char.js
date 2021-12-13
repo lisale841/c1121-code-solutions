@@ -1,7 +1,7 @@
 /*
 -create a storage for the first character in the word
--use the
-
+- get the first character in the word
+- give back the first character.
 */
 
 /* exported getFirstChar */

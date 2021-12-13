@@ -1,10 +1,8 @@
 /* exported getWords */
-
-/* -storage for the location of the text
-   - find out how many words are in the text
-   - return the
-
-function getWords */
+/* - if there are no text then we do not give back anything.
+   - however, if there are text create a storage for it
+   - if the text has multiple words split it into seperate words
+   -  give back those seperated words. */
 
 function getWords(string) {
 

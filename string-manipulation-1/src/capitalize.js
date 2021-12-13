@@ -1,6 +1,6 @@
 /* exported capitalize */
 /*
--create a storage named capital to hold t the text with the first
+-create a storage named capital to hold the text with the first
 letter capitalize
 -make the first letter of the text upper case
 -make the letters after the first letter lowercase
