@@ -1,0 +1,65 @@
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+.container {
+  width: 900px;
+  margin: auto;
+}
+
+.row {
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+}
+
+.full-column {
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+}
+
+.column-one-fifth {
+  width: calc(100% / 5);
+}
+
+.product-image {
+  width: 90%;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+}
+
+.product-name {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.product-size {
+  color: #dfdfdf;
+}
+
+.product-price {
+  font-size: 12px;
+}
+
+.new-price {
+  background-color: #fef2e7;
+}
+
+.old-price {
+  color: #dfdfdf;
+  text-decoration: line-through;
+}
+
+.lv-image {
+  margin-bottom: 25px;
+}
