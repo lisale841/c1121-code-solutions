@@ -1,6 +1,4 @@
 body {
-  font-family: 'Barlow', sans-serif;
-  font-family: 'Barlow Semi Condensed', sans-serif;
   font-family: 'DM Sans', sans-serif;
 }
 
@@ -41,7 +39,6 @@ img {
 }
 
 .product-name {
-  text-align: center;
   font-size: 12px;
   font-weight: bold;
 }
@@ -51,9 +48,7 @@ img {
 }
 
 .product-price {
-  text-align: center;
   font-size: 12px;
-  font-weight: bold;
 }
 
 .new-price {
