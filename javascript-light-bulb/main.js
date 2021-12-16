@@ -1,19 +1,18 @@
-var userClicks = 0;
+var lightsOn = true;
 var $yellowButton = document.querySelector('.yellow-button');
 var $whiteBackground = document.querySelector('.white-background');
 
 function clicker(event) {
-  event.stopPropagation();
-  userClicks++;
 
-  if (userClicks % 2 === 0) {
+  if (lightsOn) {
     $whiteBackground.className = 'black-background';
     $yellowButton.className = 'black-button';
+    lightsOn = false;
   } else {
     $whiteBackground.className = 'white-background';
     $yellowButton.className = 'yellow-button';
+    lightsOn = true;
   }
 }
 
 $yellowButton.addEventListener('click', clicker);
-$whiteBackground.addEventListener('click', clicker);
