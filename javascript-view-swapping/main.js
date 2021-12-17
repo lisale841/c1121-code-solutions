@@ -16,11 +16,13 @@ var $view = document.querySelectorAll('.view');
 function clicker(event) {
   var activeTab = event.target.matches('.tab');
   if (activeTab) {
+
+    var viewer = event.target.getAttribute('data-view');
     for (var i = 0; i < $tab.length; i++) {
-      if ($tab[i] === event.target) {
+      if ($tab[i].getAttribute('data-view') === viewer) {
         $tab[i].className = 'tab active';
         $view[i].className = 'view';
-      } else if ($tab[i] !== event.target) {
+      } else {
         $tab[i].className = 'tab';
         $view[i].className = 'view hidden';
       }
