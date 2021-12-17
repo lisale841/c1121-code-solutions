@@ -4,7 +4,7 @@ function clicker(event) {
   console.log('event.target:', event.target);
   console.log('event.target.tagName:', event.target.tagName);
 
-  if (event.target.name !== 'BUTTON') {
+  if (event.target.tagName === 'BUTTON') {
     var $taskList = event.target.closest('.task-list-item');
     console.log($taskList);
     $taskList.remove();
