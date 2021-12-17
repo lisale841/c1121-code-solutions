@@ -20,7 +20,7 @@ console.log('typeof:', typeof books);
 console.log('typeof:', typeof JSON.stringify(books));
 
 var student = '{"id":719,"name":"Lisa"}';
-console.log('type of:', student);
+console.log('type of:', typeof student);
 
 var jsonStudent = JSON.parse(student);
-console.log('typeof :', jsonStudent);
+console.log('typeof :', typeof jsonStudent);
