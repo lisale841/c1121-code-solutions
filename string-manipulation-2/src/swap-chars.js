@@ -6,7 +6,11 @@ function swapChars(firstIndex, secondIndex, string) {
     swap = string[i];
     swapChars.push(swap);
   }
-  [swapChars[firstIndex], swapChars[secondIndex]] = [swapChars[secondIndex], swapChars[firstIndex]];
+  var firstLetter = swapChars[firstIndex];
+  var secondLetter = swapChars[secondIndex];
+
+  swapChars[firstIndex] = secondLetter;
+  swapChars[secondIndex] = firstLetter;
   var newWord = swapChars.join('');
   return newWord;
 }
