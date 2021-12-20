@@ -1,7 +1,9 @@
-/* every other word is uppercase */
-
-/* exported ransomCase */
-/* every other word is uppercase */
+/* - create a storage for the word
+   - make every word lowercase.
+   - starting from the first letter in the word going thru it one by one until we get to the end of the word
+   - make every other word uppercase
+   - after getting the new word with the correct capitalization
+   - return the word. */
 
 /* exported ransomCase */
 function ransomCase(string) {
@@ -20,5 +22,3 @@ function ransomCase(string) {
   }
   return newWord;
 }
-
-ransomCase('foO');
