@@ -21,10 +21,16 @@ function clicker(event) {
     for (var i = 0; i < $tab.length; i++) {
       if ($tab[i].getAttribute('data-view') === viewer) {
         $tab[i].className = 'tab active';
-        $view[i].className = 'view';
       } else {
         $tab[i].className = 'tab';
-        $view[i].className = 'view hidden';
+      }
+    }
+
+    for (var k = 0; k < $view.length; k++) {
+      if ($view[k].getAttribute('data-view') === viewer) {
+        $view[k].className = 'view';
+      } else {
+        $view[k].className = 'view hidden';
       }
     }
   }
