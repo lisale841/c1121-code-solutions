@@ -24,8 +24,9 @@ var calculator = {
     return sum;
   },
   getAverage(numbers) {
+    var i = 0;
     var sum = 0;
-    var i = 0; sum = 0; var ArrayLen = numbers.length;
+    var ArrayLen = numbers.length;
     while (i < ArrayLen) {
       sum = sum + numbers[i++];
 
