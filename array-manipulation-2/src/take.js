@@ -6,8 +6,9 @@ function take(array, count) {
   var newArray = [];
 
   for (var i = 0; i <= count - 1; i++) {
-    newArray.push(array[i]);
-
+    if (array[i] !== undefined) {
+      newArray.push(array[i]);
+    }
   }
   return newArray;
 }
