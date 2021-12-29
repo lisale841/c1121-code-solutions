@@ -7,9 +7,8 @@ function Account(number, holder) {
 }
 
 Account.prototype.deposit = function (amount) {
-  var typeOf = typeof amount;
 
-  if (typeOf === 'number' && amount > 0 && !!amount === true) {
+  if (amount > 0 && amount === true) {
     return true;
 
   }
