@@ -1,13 +1,13 @@
 /* exported Student */
-// function Student(firstName, lastName, subject) {
-//   this.firstName = firstName;
-//   this.lastName = lastName;
-//   this.subject = subject;
-// }
+function Student(firstName, lastName, subject) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.subject = subject;
+}
 
-// Student.prototype.getFullName = function () {
-
-// };
-// Student.prototype.getIntroduction = function () {};
-
-// var Person1 = new Student(firstName, lastName, subject);
+Student.prototype.getFullName = function () {
+  return this.firstName + ' ' + this.lastName;
+};
+Student.prototype.getIntroduction = function () {
+  return 'Hello, my name is ' + this.firstName + ' ' + this.lastName + ' and I am studying ' + this.subject + '.';
+};

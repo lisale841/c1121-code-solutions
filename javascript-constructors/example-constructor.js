@@ -1,10 +1,9 @@
 function ExampleConstructor() {
 
 }
-
+console.log('value of prototype:', ExampleConstructor.prototype);
+console.log('typeof prototype:', typeof ExampleConstructor.prototype);
 var example = new ExampleConstructor();
-console.log('value of prototype', typeof _proto_);
-console.log('value of ExampleConstructor:', ExampleConstructor);
-console.log('typeof ExampleConstructor:', typeof ExampleConstructor);
-console.log('example varible:', example);
-console.log('instance of:', example instanceof ExampleConstructor);
+
+console.log('value of example:', example);
+console.log('value of instanceof', example instanceof ExampleConstructor);
