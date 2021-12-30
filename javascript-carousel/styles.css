@@ -1,0 +1,50 @@
+/* .fas fa-angle-left {
+  hover: left;
+} */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  width: 900px;
+}
+
+.style {
+  background: cadetblue;
+  border: 5px solid #555;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.column-full {
+  margin: auto;
+  width: 100%;
+}
+
+.column-third {
+  margin: auto;
+  display: inline-flex;
+}
+
+.circle-btn {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-family: monospace;
+}
+
+.right-btn {
+  font-size: 50px;
+  align-self: center;
+}
+
+.left-btn {
+  font-size: 50px;
+  align-self: center;
+}
+
+.hidden {
+  display: none;
+}
