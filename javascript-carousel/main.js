@@ -1,39 +1,47 @@
-// var $imagesContainer = document.querySelector('.images-container');
 var $view = document.querySelectorAll('.view');
 var $circle = document.querySelectorAll('.fa-circle');
-var $rightButton = document.querySelector('.fa-angle-right');
-var $leftButton = document.querySelector('.fa-angle-left');
+var $nextImage = document.querySelector('.fa-angle-right');
+var $prevImage = document.querySelector('.fa-angle-left');
 var $circleContainer = document.querySelector('.circle-btn-container');
 
-function rightClicker(event) {
-  var $rightClick = event.target.matches('.right-btn');
-
-  if ($rightClick) {
-
-    var viewer = event.target.getAttribute('data-view');
-    for (var i = 0; i < $circle.length; i++) {
-      if ($circle[i].getAttribute('data-view') === viewer) {
-        $circle[i].className = 'fas fa-circle';
+function updateCarousel(forward) {
+  var currentView;
+  for (var i = 0; i <= $view.length - 1; i++) {
+    if (!$view[i].matches('.hidden')) {
+      if (forward) {
+        currentView = i + 1;
+        if (currentView === $view.length) {
+          currentView = 0;
+        }
       } else {
-        $circle[i].className = 'far fa-circle';
+        currentView = i - 1;
+        if (currentView < 0) {
+          currentView = $view.length - 1;
+        }
       }
     }
-
-    for (var k = 0; k < $view.length; k++) {
-      if ($view[k].getAttribute('data-view') === viewer) {
-        $view[k].className = 'view';
-      } else {
-        $view[k].className = 'view hidden';
-      }
-    }
+    $view[i].className = 'view hidden';
+    $circle[i].className = 'far fa-circle';
   }
+  $view[currentView].className = 'view';
+  $circle[currentView].className = 'fas fa-circle';
+}
+
+function rightClicker() {
+  updateCarousel(true);
+  clearInterval(interval);
+  interval = setInterval(updatingPhotos, 2000);
+
 }
 
 function leftClicker() {
-
+  updateCarousel(false);
+  clearInterval(interval);
+  interval = setInterval(updatingPhotos, 2000);
 }
-$rightButton.addEventListener('click', rightClicker);
-$leftButton.addEventListener('click', leftClicker);
+
+$nextImage.addEventListener('click', rightClicker);
+$prevImage.addEventListener('click', leftClicker);
 
 function circleClicker(event) {
   var activeCircle = event.target.matches('.fa-circle');
@@ -60,17 +68,8 @@ function circleClicker(event) {
 }
 $circleContainer.addEventListener('click', circleClicker);
 
-// var counter = 0;
-// function updatingPhotos() {
+function updatingPhotos() {
+  updateCarousel(true);
+}
 
-//   counter = counter + 1;
-//   if (counter <= $view.length - 1) {
-//     $view[counter].className = 'view';
-//     $view[counter - 1].className = 'view hidden';
-//   } else {
-//     clearInterval(interval);
-
-//   }
-// }
-
-// var interval = setInterval(updatingPhotos, 2000);
+var interval = setInterval(updatingPhotos, 2000);
