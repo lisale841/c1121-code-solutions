@@ -10,7 +10,7 @@ function dropRight(array, number) {
   if (length < 0) {
     length = 0;
   }
-  for (var i = 0; i <= array.length - 1 - number; i++) {
+  for (var i = 0; i < length; i++) {
 
     newArray.push(array[i]);
 
