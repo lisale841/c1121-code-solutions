@@ -25,7 +25,7 @@
    25  cat hello.txt
    26  man touch
    27  touch tag-youre-it.txt
-   28  touch boop.txt snoot/
+   28  touch snoot/boop.txt
    29  ls snoot/
    30  man mkdir
    31  mkdir parent
@@ -34,11 +34,11 @@
    34  touch .gitkeep parent/chhild/grandchild
    35  touch .gitkeep parent/child/grandchild
    36  touch .gitkeep > parent/child/grandchild
-   37  touch .gitkeep parent/
+   37  touch parent/child/grandchild/.gitkeep
    38  ls -a
    39  man touch
    40  man touch .gitkeep /parent/child/grandchild
-   41  touch gitkeep /parent/child/grandchild
+   41  touch parent/child/grandchild/.gitkeep
    42  man mv
    43  mv pokiemans pokemon
    44  man rm
