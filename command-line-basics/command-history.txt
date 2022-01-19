@@ -1,0 +1,55 @@
+    1  exit
+    2  cd ~/repos/c1121-code-solutions/command-line-basics
+    3  pwd
+    4  cat laziness.txt
+    5  impatience.txt
+    6  cat impatience.txt
+    7  cat hubris.txt
+    8  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+    9  man ls
+   10  ls
+   11  -a
+   12  ls -a
+   13  ls -F
+   14  man ls
+   15  ls -aF lfz-staff > lfz-staff/content.txt
+   16  cat lfz-staff/content.txt
+   17  man pwd
+   18  pwd > i-was-here.txt
+   19  ls
+   20  cat i-was-here.txt
+   21  man echo
+   22  echo 'Hello, World!'
+   23  echo 'Hello, World!' > hello.txt
+   24  ls
+   25  cat hello.txt
+   26  man touch
+   27  touch tag-youre-it.txt
+   28  touch snoot/boop.txt
+   29  ls snoot/
+   30  man mkdir
+   31  mkdir parent
+   32  ls parent/
+   33  mkdir -p parent/child/grandchild
+   34  touch .gitkeep parent/chhild/grandchild
+   35  touch .gitkeep parent/child/grandchild
+   36  touch .gitkeep > parent/child/grandchild
+   37  touch parent/child/grandchild/.gitkeep
+   38  ls -a
+   39  man touch
+   40  man touch .gitkeep /parent/child/grandchild
+   41  touch parent/child/grandchild/.gitkeep
+   42  man mv
+   43  mv pokiemans pokemon
+   44  man rm
+   45  rm lol.txt
+   46  ls
+   47  rm -r kill-me/
+   48  ls
+   49  man cp
+   50  cp and-then.txt no-and-then.txt
+   51  ls
+   52  cat and-then.txt
+   53  cat no-and-then.txt
+   54  man history
+   55  history>command-history.txt
