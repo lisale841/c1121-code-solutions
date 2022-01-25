@@ -27,12 +27,12 @@ app.post('/api/grades', function (req, res) {
   console.log('Score: ', data.score);
 
   data.id = nextId;
-  grades[nextId] = req.body;
+  grades[nextId] = data;
 
   nextId++;
 
   res.status('201');
-  res.send(req.body);
+  res.send(data);
 
 });
 
