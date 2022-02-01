@@ -46,7 +46,6 @@ app.post('/api/notes', function (req, res) {
       if (err) {
         console.error(err);
         res.status('500').json({ error: 'An unexpected error has occured.' });
-
       } else {
         res.status('201');
         res.send(list.notes[list.nextId]);
@@ -71,6 +70,7 @@ app.delete('/api/notes/:id', function (req, res) {
       if (err) {
         console.error(err);
         res.status('500').json({ error: 'An unexpected error has occured.' });
+
       } else {
         res.status('204');
         res.send();
@@ -98,6 +98,7 @@ app.put('/api/notes/:id', function (req, res) {
       if (err) {
         console.error(err);
         res.status('500').json({ error: 'An unexpected error has occured.' });
+
       } else {
         res.status('200');
         res.send(list.notes[list.nextId]);
