@@ -46,9 +46,11 @@ app.post('/api/notes', function (req, res) {
       if (err) {
         console.error(err);
         res.status('500').json({ error: 'An unexpected error has occured.' });
+
+      } else {
+        res.status('201');
+        res.send(list.notes[list.nextId]);
       }
-      res.status('201');
-      res.send(list.notes[list.nextId]);
     });
 
   } else if (!data.content) {
@@ -69,9 +71,10 @@ app.delete('/api/notes/:id', function (req, res) {
       if (err) {
         console.error(err);
         res.status('500').json({ error: 'An unexpected error has occured.' });
+      } else {
+        res.status('204');
+        res.send();
       }
-      res.status('204');
-      res.send();
     });
   } else {
     res.status('404').json({ error: 'cannot find note with id' + ' ' + req.params.id });
@@ -95,9 +98,10 @@ app.put('/api/notes/:id', function (req, res) {
       if (err) {
         console.error(err);
         res.status('500').json({ error: 'An unexpected error has occured.' });
+      } else {
+        res.status('200');
+        res.send(list.notes[list.nextId]);
       }
-      res.status('200');
-      res.send(list.notes[list.nextId]);
     });
   } else {
     res.status('404').json({ error: 'cannot find note with id' + ' ' + req.params.id });
