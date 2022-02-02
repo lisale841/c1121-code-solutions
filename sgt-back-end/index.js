@@ -36,10 +36,12 @@ app.post('/api/grades', function (req, res) {
     res.status(400).json({
       error: 'Invalid score'
     });
+    return;
   } else if (!data.course || !data.name || !data.gradeId) {
     res.status(400).json({
       error: 'Invalid gradeId, course or name'
     });
+    return;
   }
 
   // eslint-disable-next-line no-console
@@ -71,27 +73,38 @@ app.put('/api/grades/:gradeId', function (req, res) {
     res.status(400).json({
       error: 'Invalid score'
     });
-  } else if (!data.course || !data.name || !data.gradeId) {
+    return;
+  } else if (!req.params.gradeId) {
     res.status(400).json({
-      error: 'Invalid gradeId, course or name'
+      error: 'Invalid gradeId'
     });
+    return;
+  } else if (!data.course || !data.name) {
+    res.status(400).json({
+      error: 'Invalid course or name'
+    });
+    return;
   }
 
   // eslint-disable-next-line no-console
   const sql = `
-  update "grades"
-set "name" = $2,
+    update "grades"
+    set "name" = $2,
     "course" = $3,
     "score"  = $4
     where "gradeId" = $1
     returning *;
- `;
-  const params = [data.gradeId, data.name, data.course, data.score];
+  `;
+  const params = [req.params.gradeId, data.name, data.course, data.score];
   db.query(sql, params)
     .then(result => {
-
-      res.status(200).json(result.rows);
-      // }
+      if (result.rows.length > 0) {
+        res.status(200).json(result.rows);
+      } else {
+        res.status(404).json({
+          error: `Cannot find grade with "gradeId" ${req.params.gradeId}`
+        });
+      }
     })
     .catch(err => {
       console.error(err);
@@ -104,30 +117,30 @@ set "name" = $2,
 
 app.delete('/api/grades/:gradeId', function (req, res) {
   // eslint-disable-next-line no-console
-  const data = req.params;
-  //   if (!isNaN(data.gradeId)) {
-  //     res.status(400).json({
-  //       error: 'Invalid grade'
-
-  //     });
-  //   } else if (!data.gradeId) {
-  //  res.status(404).json({
-  //       error: 'Does not exist'
-
-  //   });
+  const gradeId = req.params.gradeId;
+  if (isNaN(gradeId)) {
+    res.status(400).json({
+      error: 'Invalid grade'
+    });
+    return;
+  }
 
   // eslint-disable-next-line no-console
   const sql = `
-delete from "grades"
-where "gradeId" = $1
-returning *;
- `;
-  const params = [data.gradeId];
+    delete from "grades"
+    where "gradeId" = $1
+    returning *;
+  `;
+  const params = [gradeId];
   db.query(sql, params)
     .then(result => {
-
-      res.status(204).json(result.rows);
-      // }
+      if (result.rows.length > 0) {
+        res.status(204).json(result.rows);
+      } else {
+        res.status(404).json({
+          error: `Cannot find grade with "gradeId" ${req.params.gradeId}`
+        });
+      }
     })
     .catch(err => {
       console.error(err);
