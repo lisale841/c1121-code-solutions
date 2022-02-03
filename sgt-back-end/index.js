@@ -37,24 +37,24 @@ app.post('/api/grades', function (req, res) {
       error: 'Invalid score'
     });
     return;
-  } else if (!data.course || !data.name || !data.gradeId) {
+  } else if (!data.course || !data.name) {
     res.status(400).json({
-      error: 'Invalid gradeId, course or name'
+      error: 'Invalid course or name'
     });
     return;
   }
 
   // eslint-disable-next-line no-console
   const sql = `
-   insert into "grades" ("gradeId", "name", "course", "score")
-   values ($1, $2, $3, $4)
+   insert into "grades" ("name", "course", "score")
+   values ($1, $2, $3)
    returning *;
   `;
-  const params = [data.gradeId, data.name, data.course, data.score];
+  const params = [data.name, data.course, data.score];
   db.query(sql, params)
     .then(result => {
 
-      res.status(201).json(result.rows);
+      res.status(201).json(result.rows[0]);
       // }
     })
     .catch(err => {
@@ -99,7 +99,7 @@ app.put('/api/grades/:gradeId', function (req, res) {
   db.query(sql, params)
     .then(result => {
       if (result.rows.length > 0) {
-        res.status(200).json(result.rows);
+        res.status(200).json(result.rows[0]);
       } else {
         res.status(404).json({
           error: `Cannot find grade with "gradeId" ${req.params.gradeId}`
@@ -135,7 +135,7 @@ app.delete('/api/grades/:gradeId', function (req, res) {
   db.query(sql, params)
     .then(result => {
       if (result.rows.length > 0) {
-        res.status(204).json(result.rows);
+        res.status(204).json(result.rows[0]);
       } else {
         res.status(404).json({
           error: `Cannot find grade with "gradeId" ${req.params.gradeId}`
