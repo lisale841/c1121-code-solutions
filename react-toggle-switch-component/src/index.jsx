@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 import ToggleSwitch from './toggle-switch';
 
 ReactDOM.render(
-  <ToggleSwitch label="Hot Button" />,
+  <ToggleSwitch />,
   document.querySelector('#root')
 );

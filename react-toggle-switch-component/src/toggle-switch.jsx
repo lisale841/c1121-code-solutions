@@ -7,18 +7,32 @@ class ToggleSwitch extends React.Component {
       isClicked: false
     };
     this.handleClick = this.handleClick.bind(this);
+
+  }
+
+  getSwitches() {
+    if (this.state.isClicked) {
+      return 'toggle toggleOn';
+    } else {
+      return 'toggle';
+    }
+
   }
 
   handleClick() {
-    this.setState({ isClicked: true });
+    this.setState(prev => ({ isClicked: !prev.isClicked }));
   }
 
   render() {
-    if (this.state.isClicked) {
-      return <button>Thanks!</button>;
-    }
-    return <button onClick={this.handleClick}>Click Me!</button>;
 
+    return <>
+    <div className="toggle-switch" onClick={this.handleClick}>
+      <label className={this.state.isClicked ? 'label labelOn' : 'label labelOff'}>
+        <div className={this.getSwitches()} />
+      </label>
+    </div>
+      <span className= 'font'>{this.state.isClicked ? 'ON' : 'OFF'}</span>
+    </>;
   }
 }
 

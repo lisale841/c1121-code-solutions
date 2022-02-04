@@ -1,0 +1,50 @@
+.font {
+  font-family: sans-serif;
+  margin: 5px;
+}
+
+.toggle-switch {
+  display: inline-block;
+  width: 75px;
+}
+
+.label {
+  display: block;
+  position: relative;
+  border: solid;
+  border-radius: 20px;
+  border-width: 2px;
+  height: 24px;
+}
+
+.switch {
+  position: absolute;
+  background-color: white;
+  border: solid;
+  border-radius: 20px;
+  border-width: 2px;
+  height: 25px;
+  width: 24px;
+}
+
+.labelOn {
+  background-color: seagreen;
+}
+
+.labelOff {
+  background-color: lightgray;
+}
+
+.toggle {
+  position: absolute;
+  background-color: white;
+  border: solid;
+  border-radius: 20px;
+  border-width: 2px;
+  height: 20px;
+  width: 20px;
+}
+
+.toggleOn {
+  right: 0;
+}
