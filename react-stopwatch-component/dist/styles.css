@@ -1,0 +1,22 @@
+body {
+  font-family: "Font Awesome 5 Free", sans-serif;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  padding: 44px;
+  background: #fff;
+  border: 8px solid pink;
+  text-align: center;
+  font: 45px Arial, sans-serif;
+  color: hotpink;
+  margin-bottom: 15px;
+}
+
+i {
+  font-size: xx-large;
+  margin-left: 80px;
+  color: hotpink;
+}
