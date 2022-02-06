@@ -7,7 +7,6 @@ class Validate extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleMessage = this.message.bind(this);
-    this.handleButton = this.button.bind(this);
   }
 
   button() {
@@ -39,9 +38,9 @@ class Validate extends React.Component {
           <h1> Password: </h1>
           </label>
         <input type="password" value={this.state.value} onChange={this.handleChange} />
-        <i className={this.handleButton}></i>
+        <i className={this.button()}></i>
 
-        <p>{this.handleMessage}</p>
+        <p>{this.handleMessage()}</p>
       </form>
     );
   }
