@@ -39,9 +39,9 @@ class Validate extends React.Component {
           <h1> Password: </h1>
           </label>
         <input type="password" value={this.state.value} onChange={this.handleChange} />
-        <i className={this.button()}></i>
+        <i className={this.handleButton}></i>
 
-        <p>{this.handleMessage()}</p>
+        <p>{this.handleMessage}</p>
       </form>
     );
   }
