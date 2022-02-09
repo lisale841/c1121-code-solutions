@@ -30,8 +30,8 @@ app.post('/api/auth/sign-up', (req, res, next) => {
         const sql = `
           insert into "users" ("username", "hashedPassword")
           values ($1, $2)
-          returning *
-        `;
+          returning "userId", "username", "createdAt"
+         `;
 
         const params = [username, hashedPassword];
         db.query(sql, params)
@@ -44,9 +44,8 @@ app.post('/api/auth/sign-up', (req, res, next) => {
             next(err));
 
       })
-      .catch(err => {
-        console.error(err);
-      });
+      .catch(err =>
+        next(err));
   }
 
 });
