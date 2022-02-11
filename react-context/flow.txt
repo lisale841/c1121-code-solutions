@@ -1,0 +1,59 @@
+// -User can sign up
+
+When the client signs up they have to input a username and password on the
+form and click register to sign up.   In the auth-form. jsx we have a method
+called handleSubmit that execute when there is a submit event.  Where once
+the user/client clicks register it will use the fetch method to send a post
+request to the server.  If the post method is successful then a status of 201
+will be return and also the new user that was created.  Then check what the
+current action is.  If the action is signup then the location will update the location
+hash to the sign in.  Since in the server/index.js  we made a requirement/agreement
+using the app.post Method with the http url set at ‘/api/auth/sign-up’.
+Agreeing that when the client is on that sign up page they will have to provide a
+username and password in the request body.  If for some reason they do not provide
+either of those the server will send back a response with an error saying that the
+username and password field is required.  When the user does provide the required
+parameters of username and password we will then use the ARGON2 library and using
+the hash method from the Argon2 to “hash” the password.  This process is a “promise”
+meaning that the password will not be hashed immediately when the code is ran.
+After the promise is fulfilled and the hash method returns a hash password we
+will attempt to insert this “hashed password and username into the database
+“using SQL insert and using the params of username and hashed password by
+querying the database.
+
+
+USER can sign in :
+When the client signs in they have to input a username and password on the form and click login to sign in.
+Which also calls the function name handleSubmit function in the auth-form .jsx.
+Where when the client clicks on the login button there is a fetch method to send
+a post request to the server.  If the result has a user and token property then we can sign in.
+When we sign in we setState for the user object which contains the userID and username.
+Afterwards the hash location changes  to # which send you to a “GIF”.  Since in the server/index.js
+we made a requirement/agreement using the app.post Method with the http url set at ‘/api/auth/sign-in.
+Agreeing that when the client is on that sign in page they will have to provide a username
+and password in the request body.  If for some reason they do not provide either of those
+the server will send back a response with an error saying that invalid login with error code 401.
+When the user does provide the required parameters of username and password we would use sql
+to find the userID, hashedPassword for the user based on the username that the client submitted
+on the request.  Then we would query the database using the sql and parameter username.  If there is
+no user then we will send a client error response of code 401 and string “invalid login”  Then we check to see
+if the hashed password and password is matching if it is not then throw another invalid login.  However if
+it matches the database responds back by giving back a token and user object with userId and username.
+
+
+User can stay sign in (even after they refresh the page):
+
+When the client signs in they are still signed in because in the app.jsx we are setting the
+windowlocalStorage with the key values. With the key being “react-context-jwt” and the value
+being the user’s token.  So even though we refresh the local storage does not get wiped from
+browser refresh.
+
+
+User can sign out :
+
+When the client signs out by clicking on the sign-out button using the
+handleSignOut method from the app.jsx file.  it redirects the client back to the sign-in
+page because it sets the state of the user to null and also removes the ‘react-context-jwt’
+key from the local storage.  So even with refresh the user will not be signed in because
+the local storage was wiped.
+//
